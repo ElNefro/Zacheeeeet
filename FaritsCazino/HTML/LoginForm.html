@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #464242;
+        }
+
+        .login-container {
+            background-color: rgb(131, 107, 107);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            justify-items: flex-end;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 96%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #464242;
+            border-radius: 3px;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e83f52;
+            color: #464242;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #543d3f;
+        }
+        .login-container .EnterButton{
+            width: 10%;
+            border-radius: 10px;
+            position: fixed;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="login-container">
+
+    <div class="EnterButton">
+        <button type="button" onclick="GoToHtml()">Вход</button>
+    </div>
+
+    <h2>Регистрация</h2>
+
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Введите логин" required>
+        <input type="password" id="password" placeholder="Введите пароль" required>
+        <input type="password" id="password" placeholder="Повторите пароль" required>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Здесь можно добавить логику для обработки данных
+        console.log('Логин:', username);
+        console.log('Пароль:', password);
+
+        if (username && password) {
+            window.location.href = 'Home.html'; // Переход на страницу home.html
+        } else {
+            alert('Пожалуйста, введите правильные учетные данные.');
+        }
+    });
+</script>
+<script>
+
+    function GoToHtml(){
+        window.location.href = 'LogIn.html';
+    }
+
+</script>
+
+</body>
+</html>

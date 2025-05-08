@@ -1,45 +1,294 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
-    <link rel="Styles" href="/Styles/MainStyles.css">
+    <title>FaritCazino</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ea7171;
+            padding-bottom: 60px;
+        }
 
+        header {
+            background-color: #474549;
+            color: #e83f53;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: space-between; /* Размещаем элементы по бокам */
+            padding: 20px;
+        }
+        .game-info {
+            flex: 1; /* Основное содержимое занимает оставшееся пространство */
+            margin-right: 20px; /* Отступ справа для разделения */
+        }
+        .leaderboard {
+            width: 300px;
+            height: 300px; /* Фиксированная ширина для таблицы лидеров */
+            background-color: #574e4f;
+            border: 3px solid #000000;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            
+        }
+        .leaderboard table {
+            width: 100%; /* Таблица занимает всю ширину блока */
+        }
+        .leaderboard th, .leaderboard td {
+            text-align: left;
+            padding: 8px;
+            
+        }
+        footer {
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #ccc;
+        }
+        header img {
+            width: 50px; 
+            height: 50px; 
+            margin-right: 20px; 
+        }
+
+        .button {
+            background-color: #726566;
+            border: none;
+            border-radius: 5px;
+            color: #e83f52;
+            font-weight: 700;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background-color: #3d1116;
+        }
+
+        section {
+            display: flex; 
+            justify-content: space-around; 
+            flex-wrap: wrap;   
+            margin-top: 20px;
+        }
+
+        .game-card {
+            background-color: rgb(159, 152, 152);
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 230px;
+            margin: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+
+        .game-card img {
+            max-width: 100%; 
+            border-radius: 8px;
+        }
+
+        .game-card h3 {
+            padding: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .game-card p {
+            width: 100px;
+            height: 50px;
+            padding: 0 10px 10px;
+            color: #666;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.795);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #574e4f;
+            color: #e83f53;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            position: relative;
+        }
+
+        .close {
+            cursor: pointer;
+            color: #f00;
+            float: right;
+            font-size: 24px;
+        }
+
+        .close:hover {
+            color: #900;
+        }
+
+        .corner-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .contact-info {
+            position: fixed;
+            bottom: 0;       
+            left: 0;
+            right: 0;        
+            background-color: #2e2d2f;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            border-top: 1px solid #ccc;
+        
+        }
+        .score-display {
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
 </head>
-
-
-
-
 <body>
-    <h1>FARITS CAZINO <img src="images/Logo.png" width="50"/></h1>
-    <p>Баланс: </p>
+
+<header>
+    <h1>FaritCazino</h1>
+    <img src="Logotype.png" alt="Logotype">
+    <div class="account">
+
+        <div class="score-display" style="display: flex; align-items: center;">
+            <img src="Balans.png" alt="Счет" width="50" height="50" style="margin-right: 10px;"> <!-- Замените на путь к вашему изображению -->
+            <span style="font-size: 1.2em;">2500</span> <!-- Здесь вы можете указать динамично обновляемый счет -->
+        
+        </div>
+        <div class="corner-button">
+            <button class="button" onclick="togglePopup()">Личный кабинет</button>
+        </div>
+    </div>
+</header>
+     
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="togglePopup()">&times;</span>
+        <h2>Личный кабинет</h2>
+        <form>
+            <label for="username">Имя пользователя: username</label><br>
+            <label for="username">Балланс: 2500</label><br>
+            <label for="username">Место в рейтинге: 1</label><br>
+
+
+        </form>
+    </div>
+</div> 
+
+<div class="content">
+    <div class="leaderboard">
+        <h2>Таблица лидеров</h2>
+        <table>
+            <tr>
+                <th>Ник:</th>
+                <th>Балланс:</th>
+            </tr>
+            <tr>
+                <td>Игрок1</td>
+                <td>1500</td>
+            </tr>
+            <tr>
+                <td>Игрок2</td>
+                <td>1200</td>
+            </tr>
+            <tr>
+                <td>Игрок3</td>
+                <td>800</td>
+            </tr>
+            <tr>
+                <td>Игрок4</td>
+                <td>800</td>
+            </tr>
+            <tr>
+                <td>Игрок5</td>
+                <td>800</td>
+            </tr>
+        </table>
+    </div>
+    <div class="game-info">
+
+        <section>
+        </div>
+        <div class="game-card">
+            <img src="https://via.placeholder.com/200x100" alt="Название игры">
+            <h3>Игра 1</h3>
+            <p>Увлекательный игровой автомат с шансами на большой выигрыш.</p>
+        </div>
+        
+        <div class="game-card">
+            <img src="https://via.placeholder.com/200x100" alt="Название игры">
+            <h3>Игра 2</h3>
+            <p>Стратегический покер с превосходной графикой.</p>
+        </div>
+        
+        <div class="game-card">
+            <img src="https://via.placeholder.com/200x100" alt="Название игры">
+            <h3>Игра 3</h3>
+            <p>Классический блэкджек с высокими ставками.</p>
+        </div>
+        <script>
+            function togglePopup() {
+                const popup = document.getElementById('popup');
+                if (popup.style.display === 'flex') {
+                    popup.style.display = 'none';
+                } else {
+                    popup.style.display = 'flex';
+                }
+            }
+        </script>
+        </section>
+
+    </div>
+
+</div>
+
+<div id="contact-info" class="contact-info">
+    <h2>Информация</h2>
+    <p>Создатели:</p>
+    <p>Андрей Бижов, Ян Сагадеев, Артем Кожевников</p>
+</div>
 
 
 
-    <h3>Игры</h3>
-    <ul>
-        <li><a href="Roulet.html">Рулетка</a></li>
-        <li><a href="">Black Jack</a></li>
-        <li><a href="">Руская рулетка</a></li>
-        <li><a href="">Кости</a></li>
-    </ul>
 
 
-    <h3>Таблица лидеров</h2>
-        <ul>
-            <li>НИК1</li>
-            <li>НИК2</li>
-            <li>НИК3</li>
-            <li>НИК4</li>
-
-        </ul>
-    
+</div>
 
 
-    <h4>Контактная информация</h4>
 
 </body>
 </html>
