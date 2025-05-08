@@ -58,7 +58,7 @@
 Для Backend разработки мы будем использовать:
 
 - PHP
-- Python
+- C++
 - PostgreSQL
 - SQL
 
