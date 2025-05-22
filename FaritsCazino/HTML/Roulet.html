@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>РУЛЕТКА</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <h1>хуй</h1>
+
+<header class="header">
+    <a href="/" class="logo">
+        <h1>FaritCazino</h1>
+        <img src="Logotype.png" alt="Logotype" class="logo__image">
+    </a>
+    
+    <div class="account">
+        <div class="score">
+            <img class="score__img" src="Balans.png" alt="Счет"> <!-- Замените на путь к вашему изображению -->
+            <span class="score__text">2500</span> <!-- Здесь вы можете указать динамично обновляемый счет -->
+        </div>
+        <button class="account__btn" onclick="togglePopup()">Личный кабинет</button>
+    </div>
+</header>
+
+<div id="popup" class="popup">
+    <div class="popup__content">
+        <span class="popup__close" onclick="togglePopup()">&times;</span>
+        <h2 class="popup__title">Личный кабинет</h2>
+        <div class="popup__body">
+            <div class="popup__item">
+                Имя пользователя:
+                <span>username</span>
+            </div>
+            <div class="popup__item">
+                Балланс:
+                <span>2500</span>
+            </div>
+            <div class="popup__item">
+                Место в рейтинге:
+                <span>1</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="poni">
+    <img class="poni__gif" src="Poni.gif">
+    <div class="poni__content">
+        Программист в туалете
+    </div>
+</div>
+
+
+
 </body>
 </html>
