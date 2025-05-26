@@ -5,21 +5,81 @@ body {
     height: 100vh;
     background-color: #464242;
 }
+
+.ring {
+    position: absolute;
+    width: 800px;
+    height: 834px;
+    left: calc(50% - 400px);
+    top: calc(50% - 417px);
+
+}
+
+.ring {
+    width: 800px;
+    height: 834px;
+    left: calc(50% - 400px);
+    top: calc(50% - 417px);
+    animation-name: rotation;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes rotation {
+    0% {
+        transform:rotate(360deg);
+    }
+    100% {
+        transform:rotate(0deg);
+    }
+}
 .animate__img {
     position: absolute;
-    width: 656px;
-    height: 690px;
-    left: calc(50% - 328px);
-    top: calc(50% - 345px);
+    width: 800px;
+    height: 834px;
+    left: calc(50% - 400px);
+    top: calc(50% - 417px);
+    filter: grayscale(99%);
+
 } 
+
+
+
+.animate__img:hover{
+    animation-name: coloring;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    
+}
+
+
+
+
+@keyframes coloring {
+    0% {
+        filter: grayscale(99%);
+    }
+    100% {
+        filter: none;
+
+    }
+
+}
+
+
+
+
 .login-container {
     width: 300px;
     height: 150px;
     position: absolute;
     justify-items: center;
+    filter: none;
     color: #e83f52;
-    left: calc(50% - 150px);
-    top: calc(40% - 75px); 
+    font-weight: bold;
+    left: calc(49% - 150px);
+    top: calc(44% - 75px); 
 }
 .login-container h2 {
     margin-bottom: 20px;
@@ -28,14 +88,16 @@ body {
 .login-container input[type="password"] {
     width: 96%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 5px;
     border: 1px solid #464242;
     border-radius: 60px;
 }
 .login-container button {
-    width: 100%;
+    width: 103%;
     padding: 10px;
     background-color: #e83f52;
+    margin-top: 10px;
+    margin-left: 5px;
     color: #9e9595;
     border: none;
     border-radius: 60px;
