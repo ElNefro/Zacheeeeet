@@ -33,6 +33,7 @@ body {
         transform:rotate(0deg);
     }
 }
+
 .animate__img {
     position: absolute;
     width: 800px;
@@ -40,10 +41,8 @@ body {
     left: calc(50% - 400px);
     top: calc(50% - 417px);
     filter: grayscale(99%);
-
+    transition: filter 3s linear;
 } 
-
-
 
 .animate__img:hover{
     animation-name: coloring;
@@ -53,13 +52,8 @@ body {
     
 }
 
-
-
-
 @keyframes coloring {
-    0% {
-        filter: grayscale(99%);
-    }
+
     100% {
         filter: none;
 
@@ -67,7 +61,21 @@ body {
 
 }
 
+.animate__img:not(:hover) {
+    animation-name: reverseColoring; 
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
 
+@keyframes reverseColoring {
+    0% {
+        filter: none;
+    }
+    100% {
+        filter: grayscale(99%);
+    }
+}
 
 
 .login-container {
