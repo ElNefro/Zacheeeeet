@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вход в систему</title>
-    <link rel="stylesheet" href="mainStyles.css">
+    <link rel="stylesheet" href="../Styles/Login.css">
 
 </head>
 <body>
 
     <div class="ring">
-        <img class="animate__img" src="Login_animation.png">
+        <img class="animate__img" src="../Images/Login_animation2.png">
     </div>
+
+    <script>
+        const boanimate__img = document.querySelector('.animate__img');
+        
+        animate__img.addEventListener('animationend', () => {
+            animate__img.classList.add('fade-in');
+        });
+    </script>
 
 <div class="login-container">
     <h2>Вход в систему</h2>

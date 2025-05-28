@@ -45,21 +45,10 @@ body {
 } 
 
 .animate__img:hover{
-    animation-name: coloring;
-    animation-duration: 3s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-    
+    filter: grayscale(0%);
 }
 
-@keyframes coloring {
 
-    100% {
-        filter: none;
-
-    }
-
-}
 
 .animate__img:not(:hover) {
     animation-name: reverseColoring; 
@@ -68,14 +57,7 @@ body {
     animation-fill-mode: forwards;
 }
 
-@keyframes reverseColoring {
-    0% {
-        filter: none;
-    }
-    100% {
-        filter: grayscale(99%);
-    }
-}
+
 
 
 .login-container {
