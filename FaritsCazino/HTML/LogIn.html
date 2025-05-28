@@ -9,44 +9,38 @@
 </head>
 <body>
 
+
     <div class="ring">
-        <img class="animate__img" src="../Images/Login_animation2.png">
+        <img class="animate__img" src="../Images/Login_animation.png">
+    </div>
+
+    <div class="login-container">
+        <h2>Вход в систему</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Введите логин" required>
+            <input type="password" id="password" placeholder="Введите пароль" required>
+            <button type="submit">Войти</button>
+        </form>
     </div>
 
     <script>
-        const boanimate__img = document.querySelector('.animate__img');
-        
-        animate__img.addEventListener('animationend', () => {
-            animate__img.classList.add('fade-in');
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Здесь можно добавить логику для обработки данных
+            console.log('Логин:', username);
+            console.log('Пароль:', password);
+
+            if (username && password) {
+                window.location.href = 'Home.html'; // Переход на страницу home.html
+            } else {
+                alert('Пожалуйста, введите правильные учетные данные.');
+            }
         });
     </script>
 
-<div class="login-container">
-    <h2>Вход в систему</h2>
-    <form id="loginForm">
-        <input type="text" id="username" placeholder="Введите логин" required>
-        <input type="password" id="password" placeholder="Введите пароль" required>
-        <button type="submit">Войти</button>
-    </form>
-</div>
-
-<script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        // Здесь можно добавить логику для обработки данных
-        console.log('Логин:', username);
-        console.log('Пароль:', password);
-
-        if (username && password) {
-            window.location.href = 'Home.html'; // Переход на страницу home.html
-        } else {
-            alert('Пожалуйста, введите правильные учетные данные.');
-        }
-    });
-</script>
 
 </body>
 </html>
