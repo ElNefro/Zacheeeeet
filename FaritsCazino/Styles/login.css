@@ -79,7 +79,7 @@ body {
     left: calc(50% - 400px);
     top: calc(50% - 417px);
     filter: grayscale(99%);
-    transition: filter 1.3s linear;
+    transition: filter 0.5s linear;
 } 
 
 .animate__img:hover{
@@ -93,4 +93,8 @@ body {
     animation-duration: 3s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
+}
+
+.aud {
+    
 }
