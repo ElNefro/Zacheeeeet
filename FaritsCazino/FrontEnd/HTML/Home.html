@@ -14,8 +14,8 @@
     <div class="account">
 
         <div class="score-display" style="display: flex; align-items: center;">
-            <img src="../Images/Balans.png" alt="Счет" width="50" height="50" style="margin-right: 10px;"> <!-- Замените на путь к вашему изображению -->
-            <span style="font-size: 1.2em;">2500</span> <!-- Здесь вы можете указать динамично обновляемый счет -->
+            <img src="../Images/Balans.png" alt="Счет" width="50" height="50" style="margin-right: 10px;"> 
+            <span style="font-size: 1.2em;">2500</span> 
         
         </div>
         <div class="corner-button">
@@ -27,7 +27,10 @@
 
 <div id="popup" class="popup">
     <div class="popup-content">
-        <span class="close" onclick="togglePopup()">&times;</span>
+        <span class="close" onclick="togglePopup()">
+            <script src="../Script/togglePopup.js"></script>
+            &times;
+        </span>
         <h2>Личный кабинет</h2>
         <form>
             <label for="username">Имя пользователя: username</label><br>
@@ -73,18 +76,10 @@
 
         <section>
         </div>
-        <a class="game-card">
+        <a href="../HTML/OneHand.html" class="game-card">
 
             <img src="https://via.placeholder.com/200x100">
-            <h3>Игра 1</h3>
-
-
-        </a>
-        
-        <a class="game-card">
-
-            <img src="https://via.placeholder.com/200x100">
-            <h3>Игра 2</h3>
+            <h3>Однорукий бандит</h3>
 
 
         </a>
@@ -92,20 +87,18 @@
         <a href="Roulet.html" class="game-card">
 
             <img src="https://via.placeholder.com/200x100">
-            <h3>Рулетка</h3>
+            <h3>В разработке</h3>
+
+
+        </a>
+        
+        <a href="Roulet.html" class="game-card">
+
+            <img src="https://via.placeholder.com/200x100">
+            <h3>В разработке</h3>
 
         </a>
 
-        <script>
-            function togglePopup() {
-                const popup = document.getElementById('popup');
-                if (popup.style.display === 'flex') {
-                    popup.style.display = 'none';
-                } else {
-                    popup.style.display = 'flex';
-                }
-            }
-        </script>
         </section>
 
     </div>

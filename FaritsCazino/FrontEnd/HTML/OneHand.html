@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>РУЛЕТКА</title>
+    <title>Однорукий бандит</title>
     <link rel="stylesheet" href="../Styles/oneHand.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
     
     <div class="account">
         <div class="score">
-            <img class="score__img" src="../Images/Balans.png" alt="Счет"> <!-- Замените на путь к вашему изображению -->
+            <img class="score__img" src="../Images/FaritCoin.png" alt="Счет"> <!-- Замените на путь к вашему изображению -->
             <span class="score__text">2500</span> <!-- Здесь вы можете указать динамично обновляемый счет -->
         </div>
         <button class="account__btn" onclick="togglePopup()">Личный кабинет</button>
@@ -25,7 +25,10 @@
 
 <div id="popup" class="popup">
     <div class="popup__content">
-        <span class="popup__close" onclick="togglePopup()">&times;</span>
+        <span class="popup__close" onclick="togglePopup()">
+            <script src="../Script/togglePopup.js"></script>
+            &times;
+        </span>
         <h2 class="popup__title">Личный кабинет</h2>
         <div class="popup__body">
             <div class="popup__item">
@@ -41,10 +44,24 @@
                 <span>1</span>
             </div>
         </div>
+
     </div>
 </div>
 
 
+
+<div class="container">
+    <h1>Однорукий бандит</h1>
+    <div class="slot-machine">
+         <div class="slot" id="slot1">🍎</div>
+         <div class="slot" id="slot2">🍋</div>
+         <div class="slot" id="slot3">🍊</div>
+    </div>
+    <button id="spin">Крутить</button>
+    <div class="result" id="result"></div>
+</div>
+
+    <script src="../Script/OneHand.js"></script>
 
 
 </body>
